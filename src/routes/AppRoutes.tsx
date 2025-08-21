@@ -4,6 +4,8 @@ import { Login } from "../pages/authentication/Login"
 import { Register } from "../pages/authentication/Register"
 import { PrivateLayout } from "./private/PrivateLayout"
 import { Dashboard } from "../pages/dashboard/Dashboard"
+import { Tasks } from "../pages/tasks/Tasks"
+import { Calendar } from "../pages/calendar/Calendar"
 
 
 export const AppRoutes = () => {
@@ -21,7 +23,9 @@ export const AppRoutes = () => {
       path: '/app',
       element:<PrivateLayout/>,
       children: [
-        {path: 'dashboard', element: <Dashboard/>}
+        {path: 'dashboard', element: <Dashboard/>},
+        {path: 'task', element: <Tasks/>},
+        {path: 'calendar', element: <Calendar/>},
       ]
     }
   ])

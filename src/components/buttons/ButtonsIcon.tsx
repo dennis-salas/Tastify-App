@@ -19,7 +19,7 @@ export const ButtonsIcon = ({ icon, label, onClick, borderRadius = "md", w, h }:
   return (
     <Stack direction="row">
       {label ? (
-        <Button onClick={onClick}  w={w} h={h} bg="bg" color={isDark ? "white" : "brand.500"} ml="4" borderRadius={borderRadius}>{icon} {label}</Button>
+        <Button onClick={onClick}  w={w} h={h} bg="bg" color={isDark ? "white" : "brand.500"} ml="2" borderRadius={borderRadius} border="2px solid" borderColor="brand.500">{icon} {label}</Button>
       ) : (
         <IconButton aria-label="button" onClick={onClick}  w={w} h={h} bg="bg" color={isDark ? "white" : "brand.500"} ml="4" borderRadius={borderRadius}>
           {icon}

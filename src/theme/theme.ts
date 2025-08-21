@@ -46,6 +46,13 @@ export const system = createSystem(defaultConfig, {
         buttonBg: {
           value: { base: "{colors.brand.500}", _dark: "{colors.background.dark}"}
         },
+        hoverMenu:{
+          value: { base: "{colors.background.light}" ,_dark : "{colors.background.dark}" }
+        },
+
+        hoverText:{
+          value: { base: "{colors.brand.500}" ,_dark : "{colors.background.light}" }
+        }
       },
     },
   },
