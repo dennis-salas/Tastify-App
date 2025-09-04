@@ -34,6 +34,7 @@ export const SwitchTheme = () => {
           as={isDark ? FaMoon : FaSun}
           color={isDark ? "white" : "brand.500"}
           fontSize="18px"
+          data-testid={isDark ? "icon-moon" : "icon-sun"} 
         />
       </Box>
     </Box>
