@@ -3,7 +3,7 @@ import z from "zod";
 export const registerSchema = z.object({
   name: z.string().min(3, "Minimo 3 caracteres"),
   firstName: z.string().min(3, "Minimo 3 caracteres"),
-  email: z.email("Email inválido"),
+  email: z.string().email("Email inválido"),
   password1: z.string().min(6,"Minimo 6 caracteres"),
   password2: z.string().min(6, "Mínimo 6 caracteres"), 
   terms: z.boolean("Debe aceptar los términos y condiciones")

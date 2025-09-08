@@ -33,7 +33,7 @@ export const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
         />
 
         {typeof error === "string" ? (
-          <Field.HelperText>{error}</Field.HelperText>
+          <Field.HelperText role='alert'>{error}</Field.HelperText>
         ) : (
           <Field.HelperText />
         )}

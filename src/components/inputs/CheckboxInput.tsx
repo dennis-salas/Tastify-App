@@ -1,33 +1,36 @@
 import { Box, Checkbox } from "@chakra-ui/react";
-import { Controller, type Control } from "react-hook-form";
-import type { RegisterData } from "../../schemas/registerSchema";
+import { Controller, type Control, type FieldValues, type Path } from "react-hook-form";
 
-interface CheckboxInputProps {
-  name:  keyof RegisterData;
-  control: Control<RegisterData>;
+interface CheckboxInputProps<T extends FieldValues> {
+  name: Path<T>;
+  control: Control<T>;
   label: string;
   error?: string;
 }
 
-export const CheckboxInput = ({ name, control, label, error }: CheckboxInputProps) => {
+export const CheckboxInput = <T extends FieldValues>({
+  name,
+  control,
+  label,
+  error
+}: CheckboxInputProps<T>) => {
   return (
     <Box mt={4}>
-
-    <Controller
-      name={name}
-      control={control}
-      render={({ field }) => (
-        <Checkbox.Root
-          checked={field.value || false}
-          onCheckedChange={(checked) => field.onChange(!!checked)}
-        >
-          <Checkbox.HiddenInput />
-          <Checkbox.Control />
-          <Checkbox.Label>{label}</Checkbox.Label>
-          {error && <span style={{ color: "brand.500" }}>{error}</span>}
-        </Checkbox.Root>
-      )}
-    />
+      <Controller
+        name={name}
+        control={control}
+        render={({ field }) => (
+          <Checkbox.Root
+            checked={field.value || false}
+            onCheckedChange={(checked) => field.onChange(!!checked)}
+          >
+            <Checkbox.HiddenInput />
+            <Checkbox.Control />
+            <Checkbox.Label>{label}</Checkbox.Label>
+            {error && <span style={{ color: "brand.500" }} role="alert">{error}</span>}
+          </Checkbox.Root>
+        )}
+      />
     </Box>
   );
 };
